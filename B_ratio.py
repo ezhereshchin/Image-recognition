@@ -2,8 +2,7 @@ from PIL import Image
 import math
 def B_pixel_ratio(f_name):
     im=Image.open(f_name)
-    pixels = im.load()
-    print(im.size[0],im.size[1])        
+    pixels = im.load()      
     zone_x= math.floor(im.size[0]/3)
     zone_y= math.floor(im.size[1]/3)
     inside_zx= math.floor(zone_x/3)
@@ -37,7 +36,6 @@ def B_pixel_ratio(f_name):
                     bp=bp+1
                 temp_y=temp_y+1
             x=x+1
-        print(x,temp_y)
         vect.append(bp/c)    
     im.close()
         
