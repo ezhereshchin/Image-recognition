@@ -3,13 +3,9 @@ from PIL import Image
 
 def Symbol_ratio_cal():
     f_name=["zero.jpg","one.jpg","two.jpg","three.jpg","four.jpg","five.jpg","six.jpg","seven.jpg","eight.jpg","nine.jpg"]
-
-    result = open("results.txt","w") 
-    
-
+    result = open("results.txt","w")  
     for name in f_name: 
         vect=B_pixel_ratio(name)
-    
         result.write("\n")
         for v in vect:
             if v!=vect[len(vect)-1]:
@@ -19,5 +15,5 @@ def Symbol_ratio_cal():
                 temp=str(v)
                 result.write(temp)
     result.close()
-
+    
 Symbol_ratio_cal()
