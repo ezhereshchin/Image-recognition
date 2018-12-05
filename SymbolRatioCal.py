@@ -15,5 +15,3 @@ def Symbol_ratio_cal():
                 temp=str(v)
                 result.write(temp)
     result.close()
-    
-Symbol_ratio_cal()
