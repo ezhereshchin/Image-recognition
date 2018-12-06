@@ -2,8 +2,8 @@ from B_ratio import B_pixel_ratio,main
 from PIL import Image
 
 def Symbol_ratio_cal():
-    f_name=["zero.jpg","one.jpg","two.jpg","three.jpg","four.jpg","five.jpg","six.jpg","seven.jpg","eight.jpg","nine.jpg"]
-    result = open("results.txt","w") 
+    f_name=["zero.png","one.png","two.png","three.png","four.png","five.png","six.png","seven.png","eight.png","nine.png"]
+    result = open("results.csv","w") 
     for name in f_name: 
         vect=B_pixel_ratio(name)
         for v in range(len(vect)):
@@ -28,11 +28,15 @@ def read_file_vect(f_name):
 #Symbol_ratio_cal()
 
 
-def main():
-    f_name=["new_zero.jpg","new_one.jpg","new_two.jpg","new_three.jpg","new_four.jpg","new_five.jpg","new_six.jpg","new_seven.jpg","new_eight.jpg","new_nine.jpg"]
+def test_recognize():
+    f_name=["new_zero.png","new_one.png","new_two.png","new_three.png","new_four.png","new_five.png","new_six.png","new_seven.png","new_eight.png","new_nine.png"]
     
     
-    known=read_file_vect("results.txt")
+    known=read_file_vect("results.csv")
     for name in f_name: 
         recognized_char_vect=recognize(name, known)
-        print(name,recognized_char_vect,"test")
+        print(name,recognized_char_vect)
+
+#Symbol_ratio_cal_for_zero()
+#Symbol_ratio_cal()
+#test_recognize()
