@@ -3,15 +3,27 @@ from PIL import Image
 
 def Symbol_ratio_cal():
     f_name=["zero.jpg","one.jpg","two.jpg","three.jpg","four.jpg","five.jpg","six.jpg","seven.jpg","eight.jpg","nine.jpg"]
-    result = open("results.txt","w")  
+    result = open("results.txt","w") 
     for name in f_name: 
         vect=B_pixel_ratio(name)
-        result.write("\n")
-        for v in vect:
-            if v!=vect[len(vect)-1]:
-                temp=str(v)+","
-                result.write(temp)
+        for v in range(len(vect)):
+            if v!=len(vect)-1:              
+                result.write(str(vect[v]) + ",")
             else:
-                temp=str(v)
-                result.write(temp)
+                result.write(str(vect[v]) + "\n")
     result.close()
+def test_recognize():
+    saved_result=open("results.txt","r")
+    known=[]
+    for line in saved_result:
+        temp=(line.rstrip()).split(",")
+        print(temp)
+        temp_l=[]
+        for t in temp:
+            temp_l.append(float(t))
+        known.append(temp_l)
+
+    print(known,"wegweg")
+    f_name= "new_zero.jpg"
+    saved_result.close()
+    recognize(f_name, known)
