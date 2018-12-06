@@ -12,18 +12,27 @@ def Symbol_ratio_cal():
             else:
                 result.write(str(vect[v]) + "\n")
     result.close()
-def test_recognize():
-    saved_result=open("results.txt","r")
+
+def read_file_vect(f_name):
+    saved_result=open(f_name,"r")
     known=[]
     for line in saved_result:
         temp=(line.rstrip()).split(",")
-        print(temp)
         temp_l=[]
         for t in temp:
             temp_l.append(float(t))
         known.append(temp_l)
 
-    print(known,"wegweg")
-    f_name= "new_zero.jpg"
     saved_result.close()
-    recognize(f_name, known)
+    return known
+#Symbol_ratio_cal()
+
+
+def main():
+    f_name=["new_zero.jpg","new_one.jpg","new_two.jpg","new_three.jpg","new_four.jpg","new_five.jpg","new_six.jpg","new_seven.jpg","new_eight.jpg","new_nine.jpg"]
+    
+    
+    known=read_file_vect("results.txt")
+    for name in f_name: 
+        recognized_char_vect=recognize(name, known)
+        print(name,recognized_char_vect,"test")
