@@ -1,6 +1,12 @@
 from B_ratio import B_pixel_ratio,main
 from PIL import Image
-
+def Symbol_ratio_cal_for_zero():
+    f_name="zero.png"
+    result =[]
+    vect=B_pixel_ratio(f_name)
+    for v in vect:
+        result.append(v)
+    print(result)
 def Symbol_ratio_cal():
     f_name=["zero.png","one.png","two.png","three.png","four.png","five.png","six.png","seven.png","eight.png","nine.png"]
     result = open("results.csv","w") 
