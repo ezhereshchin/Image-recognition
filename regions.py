@@ -31,6 +31,9 @@ class region():
     def get_pixels(self):
         return self.pixels
 
+    def get_limits(self):
+        return self.top, self.bot, self.left, self.right 
+
     def add_pixel(self, pix):
         self.pixels.append(pix)
         x,y = pix.get_pos()
@@ -44,6 +47,11 @@ class region():
         for i in region.get_pixels:
             i.set_reg(self)
         self.pixels.extend(region)
+        t,b,l,r = region.get_limits()
+        self.top = min(t, self.top)
+        self.bot = max(b, self.bot)
+        self.left = min(l, self.left)
+        self.right =max(r, self.right)
         return
     
     def get_count(self):
