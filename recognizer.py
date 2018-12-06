@@ -12,7 +12,7 @@ def  get_distance(a, b):
 def recognize(f_name, known):
     test = B_pixel_ratio(f_name)
     distances=[]
-    for i in known:
-        distances.append([get_distance(test,i),i])
+    for i in range(len(known)):
+        distances.append([get_distance(test,known[i]),i])
     distances.sort()
-    print(distances[0][1])
+    return (distances[0][1])
