@@ -52,6 +52,7 @@ class region():
         self.bot = max(b, self.bot)
         self.left = min(l, self.left)
         self.right =max(r, self.right)
+        self.count += region.get_count()
         return
     
     def get_count(self):
