@@ -44,9 +44,9 @@ class region():
         self.count += 1
     
     def merge_regions(self, region):
-        for i in region.get_pixels:
+        for i in region.get_pixels():
             i.set_reg(self)
-        self.pixels.extend(region)
+        self.pixels.extend(region.get_pixels())
         t,b,l,r = region.get_limits()
         self.top = min(t, self.top)
         self.bot = max(b, self.bot)
