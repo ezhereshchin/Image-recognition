@@ -1,3 +1,6 @@
+#references
+#http://scikit-image.org/docs/dev/auto_examples/edges/plot_skeleton.html
+
 from skimage.morphology import skeletonize
 from skimage import data
 import matplotlib.pyplot as plt
